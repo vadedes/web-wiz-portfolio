@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className='App'>
+    <div>
       <h1>Welcome to React Web Wiz!</h1>
     </div>
   );
