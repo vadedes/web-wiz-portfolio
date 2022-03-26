@@ -47,6 +47,7 @@
     background-color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
+    border: 1px solid #e4e4e449;
 
     img {
       width: 50%;
@@ -54,7 +55,7 @@
     }
 
     &:hover {
-      box-shadow: 4px 8px 16px #313bac20;
+      box-shadow: 4px 8px 12px #38383811;
     }
 
     @media screen and (min-width: 1920px) {
