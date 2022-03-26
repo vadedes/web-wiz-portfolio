@@ -7,8 +7,8 @@ import { urlFor, client } from '../../client';
 import './Work.scss';
 
 const Work = () => {
-  const [activeFilter, setactiveFilter] = useState('All');
-  const [animateCard, setanimateCard] = useState({ y: 0, opacity: 1 });
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
 
@@ -21,7 +21,20 @@ const Work = () => {
     });
   }, []);
 
-  const handleWorkFilter = (item) => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === 'All') {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
 
   return (
     <>
